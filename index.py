@@ -16,6 +16,8 @@ count_friends_with_cars = 0
 max_salary = 0
 salary = []
 
+max_friends_salary = 0
+
 for user in users:
     # point 1
     try:
@@ -25,13 +27,8 @@ for user in users:
 
     except:
         pass
-    
-
-
-  
 
     sum_friends_salary = 0
-    max_friends_salary = 0
 
     if user.get('friends'):
         for friend in user['friends']:
@@ -46,7 +43,6 @@ for user in users:
                 best_occupation = friend['job'].copy()
                 max_salary = friend['job']['salary']
                 
-
             sum_friends_salary += friend['job']['salary']
 
     # point 4
