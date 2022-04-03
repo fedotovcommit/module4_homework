@@ -8,6 +8,7 @@ dict_bad_password = {}
 girls_drivers = []
 best_occupation = {}
 
+
 avg_flights = 0
 count_flight_in_friends = 0
 count_friends_with_cars = 0
@@ -24,6 +25,8 @@ for user in users:
     
     max_salary = 0
 
+    salary = []
+
     sum_friends_salary = 0
     max_friends_salary = 0
 
@@ -35,9 +38,11 @@ for user in users:
                 count_friends_with_cars += 1  # point 5
 
             # point 3
+            salary.append(friend['job']['salary'])
             if friend['job']['salary'] > max_salary:
-                best_occupation = {'occupation' : friend['job']['occupation'], 'salary': friend['job']['salary']}
+                best_occupation = friend['job'].copy()
                 max_salary = friend['job']['salary']
+                
 
             sum_friends_salary += friend['job']['salary']
 
@@ -84,3 +89,4 @@ print('len list_users_for_delete:', len(list_users_for_delete))
 print('count_of_deletes:', count_of_deletes)
 
 pprint(len(users))
+print(salary)
