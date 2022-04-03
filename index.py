@@ -74,7 +74,7 @@ for user in users:
 
 avg_flights = round(count_flight_in_friends / count_friends_with_cars, 5)
 
-print('Bad passwords:', user_wrong_password)
+print('Bad passwords:', users_wrong_password)
 print('Girls drivers:', girls_drivers)
 print('Best occupation:', best_occupation)
 print('Vip user:', vip_user)
