@@ -16,7 +16,7 @@ for user in users:
     # point 1
     try:
         password_int = int(user['password'])
-        dict_bad_password = {'name' : user['name'], 'password': user['password']}
+        dict_bad_password = {'name' : user['name'], 'mail': user['mail']}
         users_wrong_password.append(dict_bad_password)
 
     except:
@@ -74,7 +74,7 @@ for user in users:
 
 avg_flights = round(count_flight_in_friends / count_friends_with_cars, 5)
 
-print('Bad passwords:', users_wrong_password)
+print('users_wrong_password:', users_wrong_password)
 print('Girls drivers:', girls_drivers)
 print('Best occupation:', best_occupation)
 print('Vip user:', vip_user)
