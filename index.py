@@ -52,7 +52,6 @@ for user in users:
         vip_user = user['name']
         max_friends_salary = sum_friends_salary
 
-
     
     # point 6
 list_users_for_delete = []
