@@ -3,7 +3,7 @@ from pprint import pprint
 
 # pprint(users)
 
-user_wrong_password = []
+users_wrong_password = []
 dict_bad_password = {}
 girls_drivers = []
 best_occupation = {}
@@ -17,7 +17,7 @@ for user in users:
     try:
         password_int = int(user['password'])
         dict_bad_password = {'name' : user['name'], 'password': user['password']}
-        user_wrong_password.append(dict_bad_password)
+        users_wrong_password.append(dict_bad_password)
 
     except:
         pass
