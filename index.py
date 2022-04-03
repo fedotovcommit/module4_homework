@@ -35,7 +35,11 @@ for user in users:
             # point 2
             if friend.get('cars'):
                 if friend['sex'] == 'F': girls_drivers.append(friend['name'])
-                count_friends_with_cars += 1  # point 5
+                if friend['cars']:
+                    count_friends_with_cars += 1  # point 5
+                        # point 5
+                    if friend.get('flights'):
+                        count_flight_in_friends += len(friend.get('flights', []))
 
             # point 3
             salary.append(friend['job']['salary'])
@@ -50,10 +54,7 @@ for user in users:
         vip_user = user['name']
         max_friends_salary = sum_friends_salary
 
-    # point 5
-    if friend.get('flights'):
-        for flight in friend['flights']:
-            count_flight_in_friends += 1
+
     
     # point 6
 list_users_for_delete = []
@@ -74,7 +75,6 @@ for user in users:
             user.clear()
             count_of_deletes += 1
             break
-    
 
 avg_flights = round(count_flight_in_friends / count_friends_with_cars, 5)
 
@@ -88,4 +88,3 @@ print('len list_users_for_delete:', len(list_users_for_delete))
 print('count_of_deletes:', count_of_deletes)
 
 pprint(len(users))
-print(salary)
