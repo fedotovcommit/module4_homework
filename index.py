@@ -14,7 +14,6 @@ count_flight_in_friends = 0
 count_friends_with_cars = 0
 
 max_salary = 0
-salary = []
 
 max_friends_salary = 0
 
@@ -42,7 +41,6 @@ for user in users:
                         count_flight_in_friends += len(friend.get('flights', []))
 
             # point 3
-            salary.append(friend['job']['salary'])
             if friend['job']['salary'] > max_salary:
                 best_occupation = friend['job'].copy()
                 max_salary = friend['job']['salary']
