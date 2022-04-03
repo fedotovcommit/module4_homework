@@ -13,6 +13,9 @@ avg_flights = 0
 count_flight_in_friends = 0
 count_friends_with_cars = 0
 
+max_salary = 0
+salary = []
+
 for user in users:
     # point 1
     try:
@@ -23,9 +26,9 @@ for user in users:
     except:
         pass
     
-    max_salary = 0
 
-    salary = []
+
+  
 
     sum_friends_salary = 0
     max_friends_salary = 0
