@@ -57,24 +57,6 @@ for user in users:
 
 len_users_before_detele = len(users)
 
-# i = 0
-# while i < len(users):
-#     need_remove = False
-#     friends = users[i].get('friends', [])
-#     for friend in friends:
-#         flights = friend.get('flights', [])
-#         for flight in flights:
-#             if flight['country'] in countries:
-#                 need_remove = True
-#                 break
-#         if need_remove:
-#             break
-
-#     if need_remove:
-#         del users[i]
-#     else:
-#         i += 1
-
 i = 0
 while i < len(users):
     need_remove = False
