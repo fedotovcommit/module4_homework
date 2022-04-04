@@ -60,6 +60,7 @@ while i < len(users):
     # if user.get('friends'):
        # for friend in user['friends']:
     friends = users[i].get('friends', [])
+    # if users[i].get('friends'):
     for friend in friends:   
         if friend.get('flights'):
             for flight in friend['flights']:
