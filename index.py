@@ -55,23 +55,28 @@ for user in users:
     
     # point 6
 list_users_for_delete = []
-for user in users:
-    for country in countries:
-        if friend.get('flights'):
-            for flight in friend['flights']:
-                if country == flight['country']:
-                    if user['name'] not in list_users_for_delete:
-                        list_users_for_delete.append(user['name'])
 
 pprint(len(users))
 
-count_of_deletes = 0
-for user in users:
-    for user_for_delete in list_users_for_delete:
-        if user['name'] == user_for_delete:
-            user.clear()
-            count_of_deletes += 1
-            break
+i = 0
+while i < len(users):
+    print()
+    need_remove = False
+    if user.get('friends'):
+        for friend in user['friends']:
+            if friend.get('flights'):
+                for flight in friend['flights']:
+                    if flight['country'] in countries:
+                        need_remove = True
+                        break
+                if need_remove:
+                        break
+            
+        if need_remove:
+            del users[i]
+            print('DELETED')
+        else:
+            i += 1
 
 avg_flights = round(count_flight_in_friends / count_friends_with_cars, 5)
 
@@ -82,6 +87,5 @@ print('Vip user:', vip_user)
 print('avg_flights:', avg_flights)
 
 print('len list_users_for_delete:', len(list_users_for_delete))
-print('count_of_deletes:', count_of_deletes)
 
 pprint(len(users))
