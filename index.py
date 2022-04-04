@@ -8,13 +8,11 @@ dict_bad_password = {}
 girls_drivers = []
 best_occupation = {}
 
-
 avg_flights = 0
 count_flight_in_friends = 0
 count_friends_with_cars = 0
 
 max_salary = 0
-
 max_friends_salary = 0
 
 for user in users:
@@ -53,8 +51,7 @@ for user in users:
         max_friends_salary = sum_friends_salary
 
     
-    # point 6
-
+# point 6
 len_users_before_detele = len(users)
 
 i = 0
