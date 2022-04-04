@@ -54,29 +54,46 @@ for user in users:
 
     
     # point 6
-list_users_for_delete = []
 
-pprint(len(users))
+len_users_before_detele = len(users)
+
+# i = 0
+# while i < len(users):
+#     need_remove = False
+#     friends = users[i].get('friends', [])
+#     for friend in friends:
+#         flights = friend.get('flights', [])
+#         for flight in flights:
+#             if flight['country'] in countries:
+#                 need_remove = True
+#                 break
+#         if need_remove:
+#             break
+
+#     if need_remove:
+#         del users[i]
+#     else:
+#         i += 1
 
 i = 0
 while i < len(users):
-    print()
     need_remove = False
-    if user.get('friends'):
-        for friend in user['friends']:
-            if friend.get('flights'):
-                for flight in friend['flights']:
-                    if flight['country'] in countries:
-                        need_remove = True
-                        break
-                if need_remove:
-                        break
-            
-        if need_remove:
-            del users[i]
-            print('DELETED')
-        else:
-            i += 1
+    # if user.get('friends'):
+       # for friend in user['friends']:
+    friends = users[i].get('friends', [])
+    for friend in friends:   
+        if friend.get('flights'):
+            for flight in friend['flights']:
+                if flight['country'] in countries:
+                    need_remove = True
+                    break
+            if need_remove:
+                    break
+        
+    if need_remove:
+        del users[i]
+    else:
+        i += 1
 
 avg_flights = round(count_flight_in_friends / count_friends_with_cars, 5)
 
@@ -86,6 +103,5 @@ print('Best occupation:', best_occupation)
 print('Vip user:', vip_user)
 print('avg_flights:', avg_flights)
 
-print('len list_users_for_delete:', len(list_users_for_delete))
-
-pprint(len(users))
+print('Количество записей в users до удаления:', len_users_before_detele)
+print('Количество записей в users после удаления:', len(users))
